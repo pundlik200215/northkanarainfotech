@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <title>Login | North Kanara Infotech - Access Your Account</title>
+    <meta name="description" content="Sign in to your North Kanara Infotech account to access our services and manage your account.">
+    <meta name="keywords" content="login, sign in, North Kanara Infotech, account access">
+    <meta name="author" content="North Kanara Infotech">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://www.northkanarainfotech.com/web/login">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.northkanarainfotech.com/web/login">
+    <meta property="og:title" content="Login | North Kanara Infotech">
+    <meta property="og:description" content="Access your account">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-32x32.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#e6f0ff',
+                            100: '#b3d1ff',
+                            200: '#80b3ff',
+                            300: '#4d94ff',
+                            400: '#1a75ff',
+                            500: '#0056e0',
+                            600: '#0047b8',
+                            700: '#003890',
+                            800: '#002968',
+                            900: '#001a40',
+                        },
+                        secondary: {
+                            50: '#fff5e6',
+                            100: '#ffe0b3',
+                            200: '#ffcc80',
+                            300: '#ffb74d',
+                            400: '#ffa31a',
+                            500: '#ff8c00',
+                            600: '#e67e00',
+                            700: '#cc7000',
+                            800: '#b36200',
+                            900: '#995400',
+                        },
+                        accent: {
+                            50: '#e6f7f9',
+                            100: '#b3e5ec',
+                            200: '#80d4df',
+                            300: '#4dc2d2',
+                            400: '#1ab0c5',
+                            500: '#009eb8',
+                            600: '#008ca3',
+                            700: '#007a8e',
+                            800: '#006879',
+                            900: '#005664',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: linear-gradient(135deg, #0056e0 0%, #009eb8 50%, #ff8c00 100%);
+            min-height: 100vh;
+        }
+        
+        /* Elevation */
+        .elevation-1 { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .elevation-2 { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); }
+        .elevation-3 { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); }
+        .elevation-4 { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+        .elevation-6 { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        
+        /* Transitions */
+        .spring-standard {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        /* Focus Visible */
+        *:focus-visible {
+            outline: 3px solid #ff8c00;
+            outline-offset: 2px;
+        }
+        
+        /* Ripple Effect */
+        .ripple-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .ripple-btn:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Form Input */
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 86, 224, 0.15);
+        }
+        
+        /* Animated Background */
+        .animated-bg {
+            background: linear-gradient(-45deg, #0056e0, #009eb8, #ff8c00, #4caf50);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: particleFloat 20s infinite;
+        }
+        
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) translateX(200px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="animated-bg">
+    
+    <!-- Particles Background -->
+    <div class="particles">
+        <div class="particle" style="width: 4px; height: 4px; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="width: 6px; height: 6px; left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="width: 3px; height: 3px; left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; left: 40%; animation-delay: 1s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 50%; animation-delay: 3s;"></div>
+        <div class="particle" style="width: 6px; height: 6px; left: 60%; animation-delay: 5s;"></div>
+        <div class="particle" style="width: 3px; height: 3px; left: 70%; animation-delay: 2.5s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; left: 80%; animation-delay: 4.5s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 90%; animation-delay: 1.5s;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="min-h-screen flex items-center justify-center p-4 relative z-10">
+        <div class="w-full max-w-md">
+            
+            <!-- Logo and Title -->
+            <div class="text-center mb-8 fade-in">
+                <a href="/" class="inline-flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center elevation-4">
+                        <span class="text-primary-600 font-bold text-2xl">NK</span>
+                    </div>
+                </a>
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Welcome Back</h1>
+                <p class="text-white/80">Sign in to your North Kanara Infotech account</p>
+            </div>
+
+            <!-- Login Card -->
+            <div class="bg-white rounded-3xl elevation-6 p-8 fade-in" style="animation-delay: 0.2s;">
+                
+                <!-- Login Form -->
+                <form role="form" method="post" onsubmit="this.action = '/web/login' + location.hash" class="space-y-6">
+                    <input type="hidden" name="csrf_token" value="710f2b4ac14325067997a08b7f35cffbb189f76co1794224886"/>
+                    
+                    <!-- Email Field -->
+                    <div>
+                        <label for="login" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Email Address
+                        </label>
+                        <div class="relative">
+                            <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">email</span>
+                            <input 
+                                type="email" 
+                                id="login" 
+                                name="login" 
+                                required 
+                                autocomplete="username"
+                                autocapitalize="off"
+                                placeholder="Enter your email"
+                                class="form-input w-full pl-11 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                            >
+                        </div>
+                    </div>
+                    
+                    <!-- Password Field -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="password" class="block text-sm font-semibold text-gray-700">
+                                Password
+                            </label>
+                            <a href="/web/reset_password" class="text-sm text-primary-600 hover:text-primary-700 font-medium spring-standard">
+                                Forgot Password?
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">lock</span>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                required 
+                                autocomplete="current-password"
+                                maxlength="4096"
+                                placeholder="Enter your password"
+                                class="form-input w-full pl-11 pr-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                            >
+                            <button 
+                                type="button" 
+                                onclick="togglePassword()" 
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 spring-standard"
+                                aria-label="Toggle password visibility"
+                            >
+                                <span class="material-icons" id="toggleIcon">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Remember Me -->
+                    <div class="flex items-center">
+                        <input 
+                            type="checkbox" 
+                            id="remember" 
+                            name="remember" 
+                            class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                        >
+                        <label for="remember" class="ml-2 text-sm text-gray-700">
+                            Remember me for 30 days
+                        </label>
+                    </div>
+                    
+                    <!-- Login Button -->
+                    <button 
+                        type="submit" 
+                        class="w-full py-3.5 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-xl elevation-2 spring-standard hover:elevation-4 hover:scale-105 ripple-btn"
+                    >
+                        Sign In
+                    </button>
+                    
+                    <!-- Divider -->
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-4 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Passkey Login -->
+                    <button 
+                        type="button" 
+                        class="passkey_login_link w-full py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-xl spring-standard hover:border-primary-600 hover:text-primary-600 hover:bg-primary-50 flex items-center justify-center space-x-2"
+                    >
+                        <span class="material-icons">fingerprint</span>
+                        <span>Use a Passkey</span>
+                    </button>
+                    
+                    <!-- Sign Up Link -->
+                    <div class="text-center pt-4">
+                        <span class="text-gray-600">Don't have an account?</span>
+                        <a href="/web/signup" class="text-primary-600 hover:text-primary-700 font-semibold ml-1 spring-standard">
+                            Sign Up
+                        </a>
+                    </div>
+                    
+                    <input type="hidden" name="type" value="password"/>
+                    <input type="hidden" name="webauthn_response"/>
+                    <input type="hidden" name="redirect"/>
+                </form>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center mt-6 fade-in" style="animation-delay: 0.4s;">
+                <a href="/" class="inline-flex items-center text-white/90 hover:text-white font-medium spring-standard">
+                    <span class="material-icons mr-1">arrow_back</span>
+                    Back to Home
+                </a>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="text-center mt-8 fade-in" style="animation-delay: 0.6s;">
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-white/70">
+                    <a href="/about-us" class="hover:text-white spring-standard">About</a>
+                    <span>•</span>
+                    <a href="/contactus" class="hover:text-white spring-standard">Contact</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-white spring-standard">Privacy</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-white spring-standard">Terms</a>
+                </div>
+                <p class="text-white/60 text-xs mt-4">
+                    © 2025 North Kanara Infotech. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle Password Visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = 'visibility';
+            }
+        }
+        
+        // Caps Lock Warning
+        const passwordInput = document.getElementById('password');
+        let capsLockWarning = null;
+        
+        passwordInput.addEventListener('keyup', (e) => {
+            if (e.getModifierState && e.getModifierState('CapsLock')) {
+                if (!capsLockWarning) {
+                    capsLockWarning = document.createElement('div');
+                    capsLockWarning.className = 'text-sm text-amber-600 mt-1 flex items-center';
+                    capsLockWarning.innerHTML = '<span class="material-icons text-sm mr-1">warning</span>Caps Lock is on';
+                    passwordInput.parentElement.parentElement.appendChild(capsLockWarning);
+                }
+            } else {
+                if (capsLockWarning) {
+                    capsLockWarning.remove();
+                    capsLockWarning = null;
+                }
+            }
+        });
+        
+        // Form Validation
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            const email = document.getElementById('login').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                e.preventDefault();
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+</body>
+</html>
